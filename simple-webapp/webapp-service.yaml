@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+  namespace: default
+spec:
+  clusterIP: 10.152.183.35
+  clusterIPs:
+  - 10.152.183.35
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30082
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    name: simple-webapp
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
