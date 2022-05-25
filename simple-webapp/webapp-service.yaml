@@ -4,10 +4,6 @@ metadata:
   name: webapp-service
   namespace: default
 spec:
-  clusterIP: 10.152.183.35
-  clusterIPs:
-  - 10.152.183.35
-  externalTrafficPolicy: Cluster
   ports:
   - nodePort: 30082
     port: 8080
