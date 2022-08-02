@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: simple-frontend
+  name: simple-frontend-v2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simple-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: simple-frontend
+        version: v2
+    spec:
+      containers:
+      - image: kodekloud/webapp-color:v2
+        name: webapp-color
+        resources: {}
+status: {}
